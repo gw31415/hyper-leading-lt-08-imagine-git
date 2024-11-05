@@ -1,0 +1,3 @@
+[tools]
+typst = "latest"
+pnpm = "latest"
