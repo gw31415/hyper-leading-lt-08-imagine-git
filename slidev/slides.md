@@ -602,6 +602,10 @@ layout: two-cols-header
 
 # コミットの参照の仕組み
 
+<div class="h-10"></div>
+
+参照の中身を見てみよう。
+
 <v-click>
 
 ```txt
