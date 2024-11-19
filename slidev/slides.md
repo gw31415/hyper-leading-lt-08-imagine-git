@@ -509,5 +509,268 @@ layout: center
 ```
 
 ---
+layout: section
+---
+
+# コミットのエイリアス
+
+---
+transition: fade
+---
+
+# コミットの指定方法
+
+<div class="w-full flex items-center justify-center h-75">
+
+<v-clicks>
+
+**コミットID** (SHA-1ハッシュ値)
+
+だけではないよね……？
+
+</v-clicks>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+# コミットの指定方法
+
+::left::
+
+<ul>
+<li>
+	<v-click at=4><strong>ブランチ</strong></v-click>
+	<ul>
+		<v-click at=1><li><code>main</code></li></v-click>
+		<v-click at=2><li><code>origin/main</code></li></v-click>
+		<v-click at=3><li><code>feat/signup</code></li></v-click>
+	</ul>
+</li>
+<li>
+	<v-click at=7><strong>タグ</strong></v-click>
+	<ul>
+		<v-click at=5><li><code>v1.0.0</code></li></v-click>
+		<v-click at=6><li><code>v1.0.1</code></li></v-click>
+	</ul>
+</li>
+</ul>
+
+::right::
+
+<v-clicks at=8 depth=2>
+
+- その他
+	- **HEAD**
+	- **HEAD^**, **HEAD^^**, **HEAD~2**, ……
+	- **FETCH_HEAD**
+	- **ORIG_HEAD**
+	- **MERGE_HEAD**
+
+</v-clicks>
+
+---
+
+# 参照の保存場所
+
+<v-click>
+
+```txt
+.git/
+├── HEAD
+├── FETCH_HEAD
+├── ORIG_HEAD
+├── MERGE_HEAD
+│
+├── refs/
+│   ├── heads/
+│   │   ├── feat/
+│   │   │   └─ signup
+│   │   └── main
+│   ├── remotes/
+│   │   ├── origin/
+│   │   │   ├─ HEAD
+│   │   │   └─ main
+│   │   └── upstream/
+│   │       └── ...
+│   └── tags/
+│       ├── v1.0.0
+│       └── v1.0.1
+:
+
+```
+
+</v-click>
+
+---
+
+# コミットの参照の仕組み
+
+<v-click>
+
+```txt
+$ cat .git/HEAD
+ref: refs/heads/main
+
+$ cat .git/refs/heads/main
+1db14d5578a289819cc0e62d60577f5f4d76187e
+```
+
+</v-click>
+
+<v-click>
+
+<div class="h-10"></div>
+
+<center>
+
+参照は **_オブジェクトID_** や **他の参照** を指す
+
+</center>
+
+</v-click>
+
+---
+layout: section
+---
+
+<v-switch>
+
+<template #0-1>
+
+# コミットのエイリアス(?)
+
+</template>
+
+<template #1-2>
+
+# <s>コミット</s>のエイリアス(?)
+
+</template>
+
+</v-switch>
+	
+
+<div v-click=1 class="text-red">
+
+# オブジェクト
+
+</div>
+
+---
+
+# タグ
+
+**軽量タグ**の配置場所:
+
+<v-click>
+
+```txt
+.git/
+└── refs/
+    └── tags/
+        ├── v1.0.0
+        └── v1.0.1
+```
+
+</v-click>
+
+<ul>
+<li><strong>軽量タグ</strong>は<strong><i>オブジェクトID</i></strong>のエイリアス
+<v-click>
+<ul>
+	<li><u>Commit オブジェクトに限らない！</u></li>
+</ul>
+</v-click>
+</li>
+<li>
+<strong>注釈付きタグ</strong>は <v-click><u>他のオブジェクトを指す <strong>Tag オブジェクト</strong> </u>を作成して</v-click>から、その軽量タグを作成している
+</li>
+</ul>
+
+---
+layout: two-cols-header
+---
+
+# ブランチ
+
+::left::
+
+<ul>
+<v-click at=1><li><strong>Commit/他のBranch</strong>オブジェクトに対してのみ作れる</li></v-click>
+<v-click at=2><li>系譜の<u>一番最新のコミット</u>を指す</li></v-click>
+<v-click at=4><li>新規コミットを付け加えると <strong>自動的に移動する</strong></li></v-click>
+</ul>
+
+::right::
+
+<v-switch at=1>
+<template #0-3>
+
+```mermaid
+%%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
+gitGraph
+	commit
+	branch feat
+	switch feat
+	commit
+	switch main
+	commit type: HIGHLIGHT
+
+```
+
+</template>
+<template #3-5>
+
+```mermaid
+%%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
+gitGraph
+	commit
+	branch feat
+	switch feat
+	commit
+	switch main
+	commit type: HIGHLIGHT tag: "main"
+
+```
+
+</template>
+<template #5-6>
+
+```mermaid
+%%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
+gitGraph
+	commit
+	branch feat
+	switch feat
+	commit
+	switch main
+	commit type: HIGHLIGHT tag: "main"
+	commit
+
+```
+
+</template>
+<template #6>
+
+```mermaid
+%%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
+gitGraph
+	commit
+	branch feat
+	switch feat
+	commit
+	switch main
+	commit
+	commit type: HIGHLIGHT tag: "main"
+
+```
+
+</template>
+</v-switch>
+
+---
 layout: end
 ---
