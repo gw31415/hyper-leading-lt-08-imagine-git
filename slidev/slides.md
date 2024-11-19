@@ -309,8 +309,11 @@ layout: section
 │   │   │   └─ signup
 │   │   └── main
 │   ├── remotes/
-│   │   ├── origin
-│   │   └── upstream
+│   │   ├── origin/
+│   │   │   ├─ HEAD
+│   │   │   └─ main
+│   │   └── upstream/
+│   │       └── ...
 │   ├── stash
 │   └── tags/
 │       ├── v1.0.0
