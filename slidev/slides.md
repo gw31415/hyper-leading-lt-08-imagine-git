@@ -65,15 +65,35 @@ transition: fade
 
 # 履歴の変遷イメージ
 
-<v-clicks>
-
-- 変更する
-- **コミット**として記録する
-
-</v-clicks>
+<ul>
+<li v-click=1>変更する</li>
+<li v-click=2><strong>コミット</strong>として記録する</li>
+<li v-click=4>1つ戻す</li>
+<li v-click=6>変更する</li>
+<v-switch at=7>
+	<template #0-2>
+		<li>
+			コミットする
+		</li>
+		<div v-click=7>→ 履歴はどうなる？</div>
+	</template>
+	<template #2>
+		<li>
+			コミットする
+			<ul>
+				<li>"パラレルワールド"</li>
+				<li>上書きはされない</li>
+			</ul>
+		</li>
+	</template>
+</v-switch>
+</ul>
 
 ::right::
 <div class="h-40"></div>
+
+<v-switch at=1>
+<template #0-3>
 
 ```mermaid
 %%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
@@ -82,21 +102,9 @@ gitGraph
 	commit
 	commit type: HIGHLIGHT
 ```
----
-layout: two-cols
-transition: fade
----
 
-# 履歴の変遷イメージ
-
-<ul>
-<li>変更する</li>
-<li><strong>コミット</strong>として記録する</li>
-<v-click><li>1つ戻す</li></v-click>
-</ul>
-
-::right::
-<div class="h-40"></div>
+</template>
+<template #3-5>
 
 ```mermaid
 %%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
@@ -106,24 +114,9 @@ gitGraph
 	commit
 	commit type: HIGHLIGHT
 ```
----
-layout: two-cols
-transition: fade
----
 
-# 履歴の変遷イメージ
-
-<ul>
-<li>変更する</li>
-<li><strong>コミット</strong>として記録する</li>
-<li>1つ戻す</li>
-<v-click><li>変更する</li></v-click>
-<v-click><li>コミットする</li></v-click>
-<v-click>→ 履歴はどうなる？</v-click>
-</ul>
-
-::right::
-<div class="h-40"></div>
+</template>
+<template #5-8>
 
 ```mermaid
 %%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
@@ -133,25 +126,9 @@ gitGraph
 	commit type: HIGHLIGHT
 	commit
 ```
----
-layout: two-cols
----
 
-# 履歴の変遷イメージ
-
-<ul>
-<li>変更する</li>
-<li><strong>コミット</strong>として記録する</li>
-<li>1つ戻す</li>
-<li>変更する</li>
-<li>コミットする<ul>
-	<li>"パラレルワールド"</li>
-	<v-click><li>上書きはされない</li></v-click>
-</ul></li>
-</ul>
-
-::right::
-<div class="h-40"></div>
+</template>
+<template #8>
 
 ```mermaid
 %%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
@@ -165,6 +142,9 @@ gitGraph
 	switch feature
 	commit type: HIGHLIGHT
 ```
+
+</template>
+</v-switch>
 
 ---
 layout: center
