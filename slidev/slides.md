@@ -1,17 +1,17 @@
 ---
 theme: apple-basic
-title: なぜRustを選択するのか
+title: Gitを「イメージ」する
 highlighter: shiki
 drawings:
   persist: true
 transition: slide-left
-image: "/rust-top.jpg"
+image: "/git-logo.jpg"
 layout: intro-image
 ---
 
-# タイトル
+# Gitを「イメージ」する
 
-サブタイトル
+様々な視点から
 
 <div class="absolute bottom-10">Ama / Yuki Okugawa</div>
 
@@ -26,4 +26,4 @@ image: "/me.jpg"
 - PG歴: 2年目(23年2月~)
 - Backend (統括)
 - 好きなもの: Neovim
-- 最近: BEコース以外も<br>　やりたい
+- 最近: [Hono](https://hono.dev)を弄ってます
