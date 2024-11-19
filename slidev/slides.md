@@ -468,7 +468,7 @@ layout: center
 
 <v-clicks>
 
-<div class="bg-gray-100 p-3 rounded-lg m-6">
+<div class="bg-gray-100 p-3 rounded-lg m-6 text-dark">
 <h3>注釈付きタグとは？</h3>
 <hr class="m-2">
 <ul>
