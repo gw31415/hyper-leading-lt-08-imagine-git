@@ -791,7 +791,6 @@ layout: section
 <!-- 
 Packfile について
 index について
-Refspec について
 -->
 
 ---
@@ -870,10 +869,6 @@ Total 21 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
 ---
 
 # Index
-
----
-
-# Refspec
 
 ---
 layout: end
