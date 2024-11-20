@@ -1,7 +1,7 @@
 #import "./template.typ": *
 
 #show: template.with(
-  title: [タイトル], author: [Author], bib: "main.bib",
+  title: [タイトル], author: [Author], bib: "doc.bib",
 )
 
 = 本文

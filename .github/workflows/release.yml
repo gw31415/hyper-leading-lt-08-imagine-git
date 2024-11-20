@@ -16,13 +16,13 @@ jobs:
           brew install font-hackgen-nerd typst
 
       - name: Compile documents to PDF using Typst
-        run: typst compile doc/hello-rust-world.typ
+        run: typst compile doc/doc.typ
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
           name: Documents
-          path: doc/hello-rust-world.pdf
+          path: doc/doc.pdf
 
   slidev-export:
     runs-on: macos-14
@@ -80,5 +80,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            hello-rust-world.pdf
+            doc.pdf
             slides-export.pdf

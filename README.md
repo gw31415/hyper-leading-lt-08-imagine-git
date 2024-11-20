@@ -9,9 +9,9 @@
 - `doc/` : 原稿
   - `img/`
     - 原稿中で使用する画像ファイル
-  - `hello-rust-world.bib`
+  - `doc.bib`
     - 原稿中で使用する参考文献
-  - `hello-rust-world.typ`
+  - `doc.typ`
     - 原稿のエントリポイント
   - `template.typ`
     - 原稿のテンプレートファイル
@@ -37,7 +37,7 @@
 `doc` ディレクトリで以下のコマンドを実行してください。
 
 ```sh
-typst compile hello-rust-world.typ
+typst compile doc.typ
 ```
 
 ### スライドのビルド
