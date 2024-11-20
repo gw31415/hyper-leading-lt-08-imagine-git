@@ -798,6 +798,75 @@ Refspec について
 
 # Packfile
 
+ここにあるやつ ↓
+
+<v-click>
+
+```txt
+.git/
+└── objects/
+    ├── pack/
+    └── info/
+        
+```
+
+</v-click>
+
+<v-clicks>
+
+- <u>**複数オブジェクト**の共通部分をとって</u>圧縮
+- `info/` にはそれぞれの `.pack` ファイルに入っているオブジェクトの情報が保存されている
+- 圧縮方式は **`zlib`** を使用
+
+</v-clicks>
+
+---
+
+# Packfile
+
+## 差分の方向
+
+実は時系列の<v-click>**逆向き**</v-click>に差分をとって圧縮されている！
+
+<v-clicks>
+
+※ **新しいオブジェクト**を**基準**に、**古いオブジェクト**との差分を取っていく。
+
+← 最新のオブジェクトになるほどアクセス頻度が向上するため。
+
+</v-clicks>
+
+---
+
+# Packfile
+
+## 圧縮タイミング
+
+基本的には操作の度時折自動で行われます。
+
+<v-click>
+
+手動でも **`gc`** コマンドで実行できます。
+
+```txt {*}{maxHeight: '200px'}
+$ git gc
+Enumerating objects: 93, done.
+Counting objects: 100% (93/93), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (89/89), done.
+Writing objects: 100% (93/93), done.
+Total 93 (delta 42), reused 26 (delta 1), pack-reused 0 (from 0)
+Enumerating cruft objects: 21, done.
+Traversing cruft objects: 38, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (21/21), done.
+Total 21 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
+```
+
+</v-click>
+
 ---
 
 # Index
