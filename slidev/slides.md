@@ -29,6 +29,8 @@ image: "/me.jpg"
 - 最近: [Hono](https://hono.dev)を弄ってます
 
 ---
+layout: two-cols
+---
 
 # 今回の目的
 
@@ -47,6 +49,21 @@ image: "/me.jpg"
 - Gitを何となく使っている
 
 </v-clicks>
+
+::right::
+
+# おしながき
+
+<div v-click>
+
+- Git管理のグラフ
+- Gitのデータ構造
+- コミットのエイリアス
+- その他
+  - Packfile
+  - Index
+
+</div>
 
 ---
 layout: section
