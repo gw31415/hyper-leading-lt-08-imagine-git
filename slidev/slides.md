@@ -864,7 +864,7 @@ layout: section
 
 基本的には操作の度時折自動で行われます。
 
-<v-click>
+<div v-click>
 
 手動でも **`gc`** コマンドで実行できます。
 
@@ -885,7 +885,7 @@ Writing objects: 100% (21/21), done.
 Total 21 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
 ```
 
-</v-click>
+</div>
 
 ---
 
