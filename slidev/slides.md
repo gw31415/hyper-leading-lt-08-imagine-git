@@ -533,7 +533,7 @@ layout: center
 - オブジェクトを表すファイルからハッシュ値を計算したもの
 - **SHA-1**ハッシュ関数を使用
 
-```txt {*}{maxHeight: '180px'}
+```txt {*}{maxHeight: '120px'}
 .git/
 └── objects/
     ├── 00/
