@@ -30,6 +30,7 @@ image: "/me.jpg"
 
 ---
 layout: two-cols
+transition: slide-up
 ---
 
 # 今回の目的
@@ -73,6 +74,7 @@ layout: section
 
 ---
 layout: center
+transition: fade
 ---
 
 # Gitとは？
@@ -86,6 +88,7 @@ layout: center
 
 ---
 layout: statement
+transition: fade
 ---
 
 <v-switch>
@@ -284,6 +287,8 @@ gitGraph
 </v-click>
 
 ---
+transition: slide-up
+---
 
 # マージの内部的手順
 
@@ -395,6 +400,7 @@ layout: two-cols-header
 
 ---
 layout: center
+transition: fade
 ---
 
 オブジェクトを理解したい。
@@ -408,6 +414,7 @@ layout: center
 ---
 layout: image-right
 image: ""
+transition: fade
 ---
 
 # 1コミットの情報
@@ -437,6 +444,8 @@ layout: center
 **想像しながら聞いてください**
 
 ---
+transition: fade
+---
 
 # ファイル関連オブジェクト
 
@@ -460,6 +469,8 @@ layout: center
 	</p>
 </div>
 
+---
+transition: fade
 ---
 
 # ファイル関連オブジェクト
@@ -526,6 +537,8 @@ layout: center
 
 <!-- TODO: 注釈付きタグと軽量タグの違いの図解 -->
 
+---
+transition: slide-up
 ---
 
 # _オブジェクトID_ とは？
@@ -652,6 +665,8 @@ layout: two-cols-header
 </v-click>
 
 ---
+transition: fade
+---
 
 # コミットの参照の仕組み
 
@@ -743,6 +758,7 @@ layout: section
 
 ---
 layout: two-cols-header
+transition: slide-up
 ---
 
 # ブランチ
@@ -832,6 +848,8 @@ layout: section
 - index について
 
 ---
+transition: fade
+---
 
 # Packfile
 
@@ -857,6 +875,8 @@ layout: section
 
 </v-clicks>
 
+---
+transition: fade
 ---
 
 # Packfile
@@ -905,6 +925,8 @@ Total 21 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
 </div>
 
 ---
+transition: fade
+---
 
 # Index
 
@@ -917,6 +939,8 @@ Total 21 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
 - **ファイルのスナップショット**を保存
 - ツリーオブジェクトと同等 (ツリーオブジェクトではない)
 
+---
+transition: fade
 ---
 
 # Index
@@ -936,6 +960,7 @@ Total 21 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
 
 ---
 layout: two-cols-header
+transition: slide-up
 ---
 
 <style>
@@ -1006,6 +1031,8 @@ li {
 - `.git/index` は<v-click><strong>ステージングエリア</strong></v-click>の状態を保存。
 	- <v-click><strong>Treeオブジェクトの編集場所</strong></v-click>として考えると理解しやすい。
 
+---
+transition: slide-up
 ---
 
 # 参考文献
