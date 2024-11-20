@@ -976,5 +976,37 @@ layout: two-cols-header
 </div>
 
 ---
+layout: section
+---
+
+# まとめ
+
+---
+
+# まとめ
+
+<style>
+li {
+	font-size: 1.5rem;
+}
+</style>
+
+- Gitの履歴は<v-click><strong>有向非巡回グラフ</strong></v-click>。
+- Gitのデータは<v-click><strong>オブジェクト</strong></v-click>で保存され、 <v-click><strong>Blob, Tree, Commit, Tag</strong></v-click> などの種類がある。
+- オブジェクトは<v-click><strong>SHA-1ハッシュによるID</strong></v-click>で識別される。
+	- オブジェクトIDにはブランチ・タグ等、多様な<v-click><strong>参照</strong></v-click>がある。
+- オブジェクトは纏めて<v-click><strong>圧縮</strong></v-click>、Packfileにアーカイブされる。
+- `.git/index` は<v-click><strong>ステージングエリア</strong></v-click>の状態を保存。
+	- <v-click><strong>Treeオブジェクトの編集場所</strong></v-click>として考えると理解しやすい。
+
+---
+
+# 参考文献
+
+- [Chacon, S., & Straub, B. (2014). Pro Git. Apress.](http://progit-ja.github.io)
+- [ロボ太Researcher. (2021, October 6). Gitのオブジェクトの中身. Zenn. Accessed 2024-11-20.](https://zenn.dev/kaityo256/articles/objects_of_git)
+- [Guangyu, C. (2013, November 2). Git objects V2. SlideShare. Accessed 2024-11-20.](http://www.slideshare.net/chinkouu/git-objects-v2)
+
+---
 layout: end
 ---
