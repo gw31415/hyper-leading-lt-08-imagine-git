@@ -938,7 +938,14 @@ Total 21 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
 layout: two-cols-header
 ---
 
-# Index の役割
+<style>
+li {
+	font-size: 1.4rem;
+}
+</style>
+
+# Index
+##  Indexの役割
 
 <v-click>
 
