@@ -791,10 +791,8 @@ layout: section
 
 # その他
 
-<!-- 
-Packfile について
-index について
--->
+- Packfile について
+- index について
 
 ---
 
