@@ -493,10 +493,10 @@ layout: center
 
 # _オブジェクトID_ とは？
 
-- オブジェクトを表すファイルのハッシュ値を取ったもの。
-- **SHA-1** ハッシュ関数を使用。
+- オブジェクトを表すファイルからハッシュ値を計算したもの
+- **SHA-1**ハッシュ関数を使用
 
-```txt
+```txt {*}{maxHeight: '180px'}
 .git/
 └── objects/
     ├── 00/
@@ -512,6 +512,9 @@ layout: center
     ├── info/
     └── pack/
 ```
+
+※ `objects/**` 内のファイルから直にSHA-1をとっている訳ではない。
+(参照：[Git objects v2](http://www.slideshare.net/chinkouu/git-objects-v2))
 
 <!-- pack や info については複数のオブジェクトを圧縮したデータとそのインデックス(後述する)。 -->
 
