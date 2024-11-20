@@ -51,7 +51,19 @@ layout: center
 layout: statement
 ---
 
+<v-switch>
+<template #0>
+
+バージョンとは？
+
+</template>
+<template #1>
+
 # バージョン ≒ 履歴
+
+</template>
+</v-switch>
+
 
 ---
 layout: image
