@@ -891,6 +891,73 @@ Total 21 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
 
 # Index
 
+```txt
+.git/
+└── index
+```
+
+- **ステージングエリア**の状態に対応
+- **ファイルのスナップショット**を保存
+- ツリーオブジェクトと同等 (ツリーオブジェクトではない)
+
+---
+
+# Index
+
+## いつ更新される？
+
+→ <v-click> **`git add` などで編集**</v-click>、 <v-click>**ブランチ移動でリセット**</v-click>
+
+<v-clicks>
+
+- ブランチ移動→ **HEAD** の **Tree** オブジェクトを取得
+- **Tree** オブジェクトの内容を **Index** に変換
+- `git add` などで **Index** を編集
+- `git commit` で **Index** の内容を **Tree** オブジェクトに変換
+
+</v-clicks>
+
+---
+layout: two-cols-header
+---
+
+# Index の役割
+
+<v-click>
+
+→ **Tree オブジェクトの編集場所** と考えています
+
+</v-click>
+
+::left::
+
+## Blob オブジェクト
+
+<v-click>
+
+- `git add` で即時 `.git/objects/` に追加
+
+</v-click>
+
+::right::
+
+## Tree オブジェクト
+
+<v-clicks>
+
+- `git add` の度にTreeオブジェクト作成は複雑
+- **Index** 編集、完成後に変換
+
+</v-clicks>
+
+::bottom::
+
+<div v-click class="text-center">
+
+→ Index で <u>Tree オブジェクト作成を遅延</u>している？
+
+</div>
+
 ---
 layout: end
 ---
