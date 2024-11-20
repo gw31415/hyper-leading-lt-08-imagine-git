@@ -963,12 +963,6 @@ layout: two-cols-header
 transition: slide-up
 ---
 
-<style>
-li {
-	font-size: 1.4rem;
-}
-</style>
-
 # Index
 ##  Indexの役割
 
@@ -982,22 +976,18 @@ li {
 
 ## Blob オブジェクト
 
-<v-click>
-
-- `git add` で即時 `.git/objects/` に追加
-
-</v-click>
+<ul>
+	<li class="text-1.4rem" v-click><code>git add</code> で即時 <code>.git/objects/</code> に追加</li>
+</ul>
 
 ::right::
 
 ## Tree オブジェクト
 
-<v-clicks>
-
-- `git add` の度にTreeオブジェクト作成は複雑
-- **Index** 編集、完成後に変換
-
-</v-clicks>
+<ul>
+	<li class="text-1.4rem" v-click><code>git add</code> の度にTreeオブジェクト作成は複雑</li>
+	<li class="text-1.4rem" v-click><strong>Index</strong> 編集、完成後に変換</li>
+</ul>
 
 ::bottom::
 
@@ -1017,19 +1007,19 @@ layout: section
 
 # まとめ
 
-<style>
-li {
-	font-size: 1.5rem;
-}
-</style>
-
-- Gitの履歴は<v-click><strong>有向非巡回グラフ</strong></v-click>。
-- Gitのデータは<v-click><strong>オブジェクト</strong></v-click>で保存され、 <v-click><strong>Blob, Tree, Commit, Tag</strong></v-click> などの種類がある。
-- オブジェクトは<v-click><strong>SHA-1ハッシュによるID</strong></v-click>で識別される。
-	- オブジェクトIDにはブランチ・タグ等、多様な<v-click><strong>参照</strong></v-click>がある。
-- オブジェクトは纏めて<v-click><strong>圧縮</strong></v-click>、Packfileにアーカイブされる。
-- `.git/index` は<v-click><strong>ステージングエリア</strong></v-click>の状態を保存。
-	- <v-click><strong>Treeオブジェクトの編集場所</strong></v-click>として考えると理解しやすい。
+<ul>
+<li class="text-1.4rem">Gitの履歴は<v-click><strong>有向非巡回グラフ</strong></v-click>。</li>
+<li class="text-1.4rem">Gitのデータは<v-click><strong>オブジェクト</strong></v-click>で保存され、 <v-click><strong>Blob, Tree, Commit, Tag</strong></v-click> などの種類がある。</li>
+	<li class="text-1.4rem">
+		オブジェクトは<v-click><strong>SHA-1ハッシュによるID</strong></v-click>で識別される。
+		<ul><li class="text-1.4rem">オブジェクトIDにはブランチ・タグ等、多様な<v-click><strong>参照</strong></v-click>がある。</li></ul>
+	</li>
+<li class="text-1.4rem">オブジェクトは纏めて<v-click><strong>圧縮</strong></v-click>、Packfileにアーカイブされる。</li>
+<li class="text-1.4rem">
+	<code>.git/index</code> は<v-click><strong>ステージングエリア</strong></v-click>の状態を保存。
+	<ul><li class="text-1.4rem"><v-click><strong>Treeオブジェクトの編集場所</strong></v-click>として考えると理解しやすい。</li></ul>
+</li>
+</ul>
 
 ---
 transition: slide-up
