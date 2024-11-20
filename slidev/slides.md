@@ -783,5 +783,29 @@ gitGraph
 </v-switch>
 
 ---
+layout: section
+---
+
+# その他
+
+<!-- 
+Packfile について
+index について
+Refspec について
+-->
+
+---
+
+# Packfile
+
+---
+
+# Index
+
+---
+
+# Refspec
+
+---
 layout: end
 ---
