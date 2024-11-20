@@ -1028,8 +1028,8 @@ transition: slide-up
 # 参考文献
 
 - [Chacon, S., & Straub, B. (2014). Pro Git. Apress.](http://progit-ja.github.io)
-- [ロボ太Researcher. (2021, October 6). Gitのオブジェクトの中身. Zenn. Accessed 2024-11-20.](https://zenn.dev/kaityo256/articles/objects_of_git)
-- [Guangyu, C. (2013, November 2). Git objects V2. SlideShare. Accessed 2024-11-20.](http://www.slideshare.net/chinkouu/git-objects-v2)
+- [ロボ太Researcher. (2021, October 6). Gitのオブジェクトの中身. Zenn. Retrieved 2024-11-20.](https://zenn.dev/kaityo256/articles/objects_of_git)
+- [Guangyu, C. (2013, November 2). Git objects V2. SlideShare. Retrieved 2024-11-20.](http://www.slideshare.net/chinkouu/git-objects-v2)
 
 ---
 layout: end
