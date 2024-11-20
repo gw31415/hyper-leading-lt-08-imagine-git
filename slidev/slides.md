@@ -29,6 +29,26 @@ image: "/me.jpg"
 - 最近: [Hono](https://hono.dev)を弄ってます
 
 ---
+
+# 今回の目的
+
+<v-clicks>
+
+- Gitの操作を「イメージ」する
+- Gitの内部構造を理解する
+
+</v-clicks>
+
+## 想定する読者
+
+<v-clicks>
+
+- Gitの基本操作ができる
+- Gitを何となく使っている
+
+</v-clicks>
+
+---
 layout: section
 ---
 
