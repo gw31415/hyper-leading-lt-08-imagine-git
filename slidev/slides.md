@@ -43,7 +43,7 @@ layout: center
 <v-clicks>
 
 - 分散型
-- <u>バージョン</u> 管理
+- <u>バージョン</u>管理
 
 </v-clicks>
 
@@ -280,6 +280,7 @@ layout: section
 │   │
 │   ├── ff/
 │   │   └── ...
+│   │
 │   ├── info/
 │   └── pack/
 │
@@ -493,14 +494,17 @@ layout: center
     │   ├── 97207263d15baa30c1559b4fcb2f98d0f12707
     │   └── ...
     ├── 01/
-    │   ├── edc5fe71971e9ffa5b0e57dc55a5c48a258ad5
     │   └── ...
     ├ ...
-    ├ ...
     │
-    └── ff/
-        └── ...
+    ├── ff/
+    │   └── ...
+    │
+    ├── info/
+    └── pack/
 ```
+
+<!-- pack や info については複数のオブジェクトを圧縮したデータとそのインデックス(後述する)。 -->
 
 ---
 layout: section
