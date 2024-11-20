@@ -993,7 +993,7 @@ transition: slide-up
 
 <div v-click class="text-center">
 
-→ Index で <u>Tree オブジェクト作成を遅延</u>している？
+→ Index で <u>Tree オブジェクト作成を遅延</u>している (?)
 
 </div>
 
