@@ -414,17 +414,14 @@ layout: center
 
 </v-clicks>
 
-<v-click>
-
-<div class="h-10"></div>
-
-<center>
-
-※ ファイルを一部変更しても<u>別の**オブジェクト**</u>が作られる
-
-</center>
-
-</v-click>
+<div class="flex flex-col items-center justify-evenly">
+	<p v-click>
+		ファイルを一部変更しても<u>別の<strong>オブジェクト</strong></u>が作られる
+	</p>
+	<p v-click>
+		※ 複数オブジェクトの圧縮保管の際に適宜差分を取る (Packfile)
+	</p>
+</div>
 
 ---
 
