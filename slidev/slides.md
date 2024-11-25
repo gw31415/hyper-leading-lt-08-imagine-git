@@ -57,7 +57,7 @@ transition: slide-up
 
 <div v-click>
 
-- Git管理のグラフ
+- Git履歴のグラフ
 - Gitのデータ構造
 - コミットのエイリアス
 - その他
