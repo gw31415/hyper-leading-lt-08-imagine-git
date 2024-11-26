@@ -1132,7 +1132,7 @@ layout: section
 # その他
 
 - Packfile について
-- index について
+- Index について
 
 ---
 transition: fade
