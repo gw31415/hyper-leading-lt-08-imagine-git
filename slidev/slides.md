@@ -591,7 +591,7 @@ layout: center
 
 # Tag オブジェクト
 
-**<u>注釈付き</u>タグ**1つに対応するオブジェクト。
+**<u v-click>注釈付き</u>タグ**1つに対応するオブジェクト。 <span class="text-lg" v-click><code>git tag -a</code> (<code>-s</code>, <code>-m</code>)</span>
 
 <v-clicks>
 
