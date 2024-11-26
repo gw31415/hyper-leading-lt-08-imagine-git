@@ -353,16 +353,19 @@ transition: slide-up
 
 # マージの内部的手順
 
-<v-clicks>
-
-- 各コミット同士の **直近の分岐点** を見つける
-- 分岐点からの **変更差分をそれぞれ集計**
-- 競合していない差分を統合
-- 競合が発見された場合、 **マージをブロック**
-	- 手動で解決してもらう(**コンフリクト**)
-- 競合が解消されたら、 **親が2つあるコミット (マージコミット)** を作成、ブランチの最新コミットを更新
-
-</v-clicks>
+<ul>
+<li class="text-2xl" v-click>各コミット同士の <strong>直近の分岐点</strong> を見つける</li>
+<li class="text-2xl" v-click>分岐点からの <strong>変更差分をそれぞれ集計</strong></li>
+<li class="text-2xl" v-click>競合していない差分を統合</li>
+<li class="text-2xl" v-click>
+	競合が発見された場合、 <strong>マージをブロック</strong>
+	<ul>
+		<li class="text-2xl">手動で解決してもらう(<strong>コンフリクト</strong>)</li>
+	</ul>
+	
+</li>
+<li class="text-2xl" v-click>競合が解消されたら、 <strong>親が2つあるコミット (マージコミット)</strong> を作成、ブランチの最新コミットを更新</li>
+</ul>
 
 <!--
 
@@ -397,7 +400,7 @@ layout: section
 
 - **`.git`** ディレクトリに保存される
 
-```txt {*}{maxHeight:'300px'}
+```txt {*}{maxHeight:'240px'}
 .git/
 ├── index
 │
@@ -646,12 +649,10 @@ transition: fade
 -->
 
 ---
-layout: center
----
 
-<div class="m-40">
+<div class="w-full h-110 flex flex-col justify-center items-center">
 
-![Tree-Blob Model](/tree-blob-model.png)
+<img src="/tree-blob-model.png" alt="Tree-Blob Model" class="w-1/2">
 
 引用元：[Gitの内側 - Gitオブジェクト](https://git-scm.com/book/ja/v2/Gitの内側-Gitオブジェクト)
 
@@ -669,16 +670,19 @@ layout: center
 
 **コミット**1つに対応するオブジェクト。
 
-<v-clicks>
-
-- **Tree** オブジェクト
-	- プロジェクトルートのファイル/ディレクトリ配置
-
-- 親の **Commit** オブジェクトの _ID_
-	- 1つのコミットには1つ以上の親がある
-- コミットメッセージ, ユーザー, 時刻, ……
-
-</v-clicks>
+<ul>
+  <li v-click><strong>Tree</strong> オブジェクト
+    <ul>
+      <li>プロジェクトルートのファイル/ディレクトリ配置</li>
+    </ul>
+  </li>
+  <li v-click>親の <strong>Commit</strong> オブジェクトの <em>ID</em>
+    <ul>
+      <li>1つのコミットには1つ以上の親がある</li>
+    </ul>
+  </li>
+  <li v-click>コミットメッセージ, ユーザー, 時刻, ……</li>
+</ul>
 
 <!--
 
@@ -712,8 +716,8 @@ transition: fade
 </ul>
 </div>
 
-<div class="flex items-end">
-<div class="w-2/5 text-center">
+<div class="flex items-end justify-evenly divide-x divide-dashed">
+<div class="w-7/20 text-center">
 
 ```mermaid
 flowchart LR
@@ -734,10 +738,10 @@ flowchart LR
 	`"]
 ```
 
-<h3>軽量タグ</h3>
+<div class="text-sm">軽量タグ</div>
 
 </div>
-<div class="w-3/5 text-center">
+<div class="w-1/2 text-center">
 
 ```mermaid
 flowchart LR
@@ -763,7 +767,7 @@ flowchart LR
 	`"]
 ```
 
-<h3>注釈付きタグ</h3>
+<div class="text-sm">注釈付きタグ</div>
 
 </div>
 </div>
@@ -1013,7 +1017,7 @@ layout: section
 
 # タグ
 
-**軽量タグ**の配置場所:
+<div class="text-lg"><strong>軽量タグ</strong>の配置場所:</div>
 
 <v-click>
 
@@ -1028,14 +1032,12 @@ layout: section
 </v-click>
 
 <ul>
-<li><strong>軽量タグ</strong>は<strong><i>オブジェクトID</i></strong>のエイリアス
-<v-click>
-<ul>
-	<li><u>Commit オブジェクトに限らない！</u></li>
+<li class="text-2xl"><strong>軽量タグ</strong>は<strong><i>オブジェクトID</i></strong>のエイリアス
+<ul v-click>
+	<li class="text-2xl"><u>Commit オブジェクトに限らない！</u></li>
 </ul>
-</v-click>
 </li>
-<li>
+<li class="text-2xl">
 <strong>注釈付きタグ</strong>は <v-click><u>他のオブジェクトを指す <strong>Tag オブジェクト</strong> </u>を作成して</v-click>から、その軽量タグを作成している
 </li>
 </ul>
@@ -1137,8 +1139,7 @@ transition: fade
 
 # Packfile
 
-ここにあるやつ ↓
-
+<div class="text-2xl">ここにあるやつ ↓</div>
 <v-click>
 
 ```txt
@@ -1150,11 +1151,10 @@ transition: fade
 ```
 
 </v-click>
-
 <v-clicks>
 
-- <u>**複数オブジェクト**の共通部分をとって</u>圧縮
-- `info/` にはそれぞれの `.pack` ファイルに入っているオブジェクトの情報が保存されている
+- <u>**複数オブジェクト**の共通部分をとって</u>`pack`に圧縮
+- `info/` は `pack` 内にあるオブジェクトの場所を保持
 - 圧縮方式は **`zlib`** を使用
 
 </v-clicks>
