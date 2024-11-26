@@ -595,7 +595,7 @@ layout: center
 
 <v-clicks>
 
-<div class="bg-gray-100 p-3 rounded-lg m-6 text-dark">
+<div class="bg-gray-100 px-4 rounded-lg text-dark">
 <h3>注釈付きタグとは？</h3>
 <hr class="m-2">
 <ul>
@@ -604,11 +604,77 @@ layout: center
 </ul>
 </div>
 
+<div class="flex items-end">
+<div class="w-2/5 text-center">
+
+```mermaid
+flowchart LR
+	LightTag@{ shape: stadium, label: "v1.0.0" } o--o
+	Commit["`
+	<strong><u>Commit</u></strong>
+	<div style="font-size: 8px"><code>a9193f9</code></div>
+	`"] -->
+	Tree["`
+	<strong><u>Tree</u></strong>
+	<div style="font-size: 8px"><code>e2383d0</code></div>
+	`"]
+	
+	Commit -->
+	MotherCommit["`
+	<strong><u>Commit'</u></strong>
+	<div style="font-size: 8px"><code>bf05968</code></div>
+	`"]
+```
+
+<h3>軽量タグ</h3>
+
+</div>
+<div class="w-3/5 text-center">
+
+```mermaid
+flowchart LR
+	classDef tag stroke:#f00
+	LightTag@{ shape: stadium, label: "v1.0.0" } o--o
+	Tag["`
+	<strong><u>Tag</u></strong>
+	<div style="font-size: 8px"><code>f9adc43</code></div>
+	`"]:::tag -->
+	Commit["`
+	<strong><u>Commit</u></strong>
+	<div style="font-size: 8px"><code>a9193f9</code></div>
+	`"] -->
+	B["`
+	<strong><u>Tree</u></strong>
+	<div style="font-size: 8px"><code>e2383d0</code></div>
+	`"]
+
+	Commit -->
+	MotherCommit["`
+	<strong><u>Commit'</u></strong>
+	<div style="font-size: 8px"><code>bf05968</code></div>
+	`"]
+```
+
+<h3>注釈付きタグ</h3>
+
+</div>
+</div>
+
+</v-clicks>
+
+---
+
+# Tag オブジェクト
+
+**<u>注釈付き</u>タグ**が持つ情報:
+
+<v-click>
+
 - タグが指す オブジェクトの _ID_
 - タグ名
 - 作成者, 時刻, メッセージ
 
-</v-clicks>
+</v-click>
 
 <!-- TODO: 注釈付きタグと軽量タグの違いの図解 -->
 
