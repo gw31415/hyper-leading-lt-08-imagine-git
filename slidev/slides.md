@@ -1407,6 +1407,9 @@ transition: slide-up
 <h3>例</h3>
 
 ```bash
+git restore --source=origin/main dir/file.txt
+# origin/main が指す Commit オブジェクトから dir/file.txt を取り出して Working Directory に復元
+
 git restore --source=HEAD^ --staged file.txt
 # HEAD の1つ前が指す Commit オブジェクトから file.txt を取り出して Index に追加
 ```
