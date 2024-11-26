@@ -685,7 +685,7 @@ transition: slide-up
 # _オブジェクトID_ とは？
 
 - オブジェクトを表すファイルからハッシュ値を計算したもの
-- **SHA-1**ハッシュ関数を使用
+- **SHA-1**ハッシュ関数を使用 <span class="text-lg">(SHA-256に設定も可)</span>
 
 ```txt {*}{maxHeight: '120px'}
 .git/
