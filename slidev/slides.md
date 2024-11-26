@@ -63,6 +63,7 @@ transition: slide-up
 - その他
   - Packfile
   - Index
+- コマンド各論
 
 </div>
 
@@ -1280,6 +1281,139 @@ transition: slide-up
 → Index で <u>Tree オブジェクト作成を遅延</u>している (?)
 
 </div>
+
+---
+layout: section
+---
+
+# コマンド各論
+
+---
+layout: statement
+---
+
+これからGitのコマンドを例示していきます。
+
+`.git` 内のオブジェクト操作をイメージできますか？
+
+---
+
+# `git add`
+
+<v-clicks>
+
+- **Blob** オブジェクトを作成
+- **Index** に **Blob** オブジェクトを追加
+
+</v-clicks>
+
+---
+
+# `git commit`
+
+<v-clicks>
+
+- **Index** の内容を **Tree** オブジェクトに変換
+- **Commit** オブジェクトを作成
+	- 新規作成した **Tree** オブジェクトを指す
+	- Parent コミットは <u>HEAD の _ID_</u> を指す
+
+</v-clicks>
+
+---
+layout: two-cols
+---
+
+# `git branch`
+
+<v-click>
+
+- **Branch** の参照を作成
+	- <u>HEAD の _ID_</u> を指す
+
+</v-click>
+
+# `git tag`
+
+<v-click>
+
+- **Tag** の参照を作成
+	- <u>HEAD の _ID_</u> を指す
+
+</v-click>
+
+::right::
+
+# `git tag -a`
+
+<v-clicks>
+
+- **Tag** オブジェクトを作成
+- **Tag** の参照を作成
+	- <u>HEAD の _ID_</u> を指す
+
+</v-clicks>
+
+---
+
+# `git switch`
+
+<v-click>
+
+- **HEAD** の参照を変更
+
+</v-click>
+
+<h3>注意</h3>
+
+<v-click>
+
+- ブランチ以外のコミットを指定することもできるが、**危ないので** `--detach` を指定しなければ使えなくなっている
+- <u>ブランチで辿れないコミット</u>を作ってしまう可能性があるから
+	- **Dangling Commit** と呼ばれる
+
+</v-click>
+
+---
+transition: fade
+---
+
+# `git restore`
+
+<v-clicks>
+
+- **HEAD** から **Commit** オブジェクトを取得
+- **Tree** オブジェクトを取得
+- **Tree** オブジェクトから指定された **Blob** オブジェクトを取得
+- **Blob** オブジェクトをファイル変換
+- **Working Directory** にファイルを復元
+
+</v-clicks>
+
+---
+transition: slide-up
+---
+
+# `git restore`
+
+<h3>参考</h3>
+
+<v-clicks>
+
+- `--source` オプション: **HEAD** 以外の **Commit** オブジェクトから取得可能
+- `--staged` オプション: **Index** を編集
+
+<div>
+<h3>例</h3>
+
+```bash
+git restore --source=HEAD^ --staged file.txt
+# HEAD の1つ前が指す Commit オブジェクトから file.txt を取り出して Index に追加
+```
+
+</div>
+
+</v-clicks>
 
 ---
 layout: section
