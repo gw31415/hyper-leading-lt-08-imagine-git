@@ -1355,14 +1355,23 @@ layout: two-cols
 </v-clicks>
 
 ---
+transition: fade
+---
 
 # `git switch`
 
-<v-click>
+<v-clicks>
 
 - **HEAD** の参照を変更
+- **Commit** オブジェクト & **Tree** オブジェクトを取得
+- **Tree** オブジェクトを **Index** に変換
+- **Working Directory** を **Index** に合わせる
 
-</v-click>
+</v-clicks>
+
+---
+
+# `git switch`
 
 <h3>注意</h3>
 
