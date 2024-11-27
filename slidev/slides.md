@@ -863,6 +863,12 @@ layout: section
 
 # コミットのエイリアス
 
+<!--
+
+コミットのエイリアスです～。
+
+-->
+
 ---
 transition: fade
 ---
@@ -880,6 +886,13 @@ transition: fade
 </v-clicks>
 
 </div>
+
+<!--
+
+- 普段、皆さんは「特定のコミット」を指定したい時、どのようにして指定していますか？
+- ここまでの話から、一番単純なのは、コミットIDを指定することですが、ご存知の通り、コミットIDはあまり入力しないですよね。
+
+-->
 
 ---
 layout: two-cols-header
@@ -920,6 +933,16 @@ layout: two-cols-header
 
 </v-clicks>
 
+<!--
+
+- 例えば `main` や `origin/main` などのブランチ名、
+- `v1.0.0` などのタグ名を指定することがあります。
+- その他にも、`HEAD` や `HEAD^` などを入力したこともあるかもしれません。
+
+これらは、実は全て、先程まで説明してきたオブジェクトのIDの別名になっています。
+
+-->
+
 ---
 
 # 参照の保存場所
@@ -953,6 +976,14 @@ layout: two-cols-header
 
 </v-click>
 
+<!--
+
+- これらの別名はどこにあるのか、それはもちろん `.git` ディレクトリ内です。
+	- 主に `.git/refs/` ディレクトリ内
+	- ものによっては `.git/` 直下
+
+-->
+
 ---
 transition: fade
 ---
@@ -975,48 +1006,57 @@ $ cat .git/refs/heads/main
 
 </v-click>
 
-<v-click>
-
-<div class="h-10"></div>
-
-<center>
+<div class="py-10 text-center" v-click>
 
 参照は **_オブジェクトID_** や **他の参照** を指す
 
-</center>
+</div>
 
-</v-click>
+<!--
+
+参照の中身はどうなっているのか。
+
+- これらはテキストファイルになっているので、中身を普通にメモ帳やVSCodeなどで見ることができます。
+- ターミナルだと `cat` コマンドで中身を見れますね。
+
+このように、参照はオブジェクトIDや他の参照を指しています。
+
+-->
 
 ---
 layout: section
 ---
 
 <v-switch>
-
 <template #0-1>
 
 # コミットのエイリアス(?)
 
 </template>
-
 <template #1-2>
 
 # <s>コミット</s>のエイリアス(?)
 
 </template>
-
 </v-switch>
 	
+<div v-click=1 class="text-red text-5xl">オブジェクト</div>
 
-<div v-click=1 class="text-red">
+<!--
 
-# オブジェクト
+実は、参照はコミット限定で付けられるわけではなく、オブジェクト全般に付けられます。
 
-</div>
+例えば、BlobオブジェクトやTreeオブジェクトにもタグを付けることができます。
+
+ブランチはコミットにしか付けられないなど、一部制限はありますが、基本的にはオブジェクト全般に付けられるような仕組みになっています。
+
+次からは、軽量タグやブランチなど、個別の参照の仕様について説明していきます。
+
+-->
 
 ---
 
-# タグ
+# 軽量タグ
 
 <div class="text-lg"><strong>軽量タグ</strong>の配置場所:</div>
 
@@ -1043,19 +1083,33 @@ layout: section
 </li>
 </ul>
 
+<!--
+
+- 軽量タグは一番シンプルな参照です。
+- 指定したオブジェクトに対して、ユーザーが適当な名前でタグを付けることができます。
+- 配置場所はここです
+- 実は、コミット以外のオブジェクトにも付けられます。
+- 先程も述べたとおり、注釈付きタグはオブジェクトを指すタグオブジェクトを作成してから、その軽量タグを作成しています。
+
+-->
+
 ---
 layout: two-cols-header
-transition: slide-up
 ---
 
 # ブランチ
 
+<div class="text-center">
+
+**ローカルブランチ** と **リモートブランチ** がある。
+
+</div>
+
 ::left::
 
 <ul>
-<v-click at=1><li><strong>Commit/他のBranch</strong>オブジェクトに対してのみ作れる</li></v-click>
-<v-click at=2><li>系譜の<u>一番最新のコミット</u>を指す</li></v-click>
-<v-click at=4><li>新規コミットを付け加えると <strong>自動的に移動する</strong></li></v-click>
+<v-click at=1><li><strong>Commit オブジェクト</strong> or <strong>他の Branch 参照</strong>に対してのみ作れる</li></v-click>
+<v-click at=2><li>系譜の<u>一番終端のコミット</u>を指すことになっている</li></v-click>
 </ul>
 
 ::right::
@@ -1076,7 +1130,7 @@ gitGraph
 ```
 
 </template>
-<template #3-5>
+<template #3>
 
 ```mermaid
 %%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
@@ -1091,7 +1145,45 @@ gitGraph
 ```
 
 </template>
-<template #5-6>
+</v-switch>
+
+<!--
+
+- 次は、皆さんが一番馴染みのあるブランチについてです。
+- ブランチは、ローカルブランチとリモートブランチで動作が変わりますが、どちらも <u>**Commitオブジェクト**や他の **Branch 参照**以外には作れません</u>。
+- ブランチは「履歴の枝のようなもの」なイメージを持たれていると思います。そのイメージは正しいのですが、 **Commit オブジェクト** の参照としては、一番終端のコミットを指すことになっています。
+
+-->
+
+---
+
+# ローカルブランチ
+
+<div class="h-80 flex justify-around items-center">
+<div class="w-1/2">
+
+- 新規コミットを付け加えると **自動的に移動する**
+
+</div>
+<div class="w-1/3">
+
+<v-switch at=1>
+<template #0-1>
+
+```mermaid
+%%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
+gitGraph
+	commit
+	branch feat
+	switch feat
+	commit
+	switch main
+	commit type: HIGHLIGHT tag: "main"
+
+```
+
+</template>
+<template #1>
 
 ```mermaid
 %%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
@@ -1107,7 +1199,7 @@ gitGraph
 ```
 
 </template>
-<template #6>
+<template #2>
 
 ```mermaid
 %%{ init: { 'gitGraph': { 'showCommitLabel': false, 'showBranches': false } } }%%
@@ -1124,6 +1216,36 @@ gitGraph
 
 </template>
 </v-switch>
+
+</div>
+</div>
+
+<!-- (スライドを読む) -->
+
+---
+transition: slide-up
+---
+
+# リモートブランチ
+
+ローカルブランチとは少し動作が異なる
+
+<div class="h-50 flex justify-center items-center">
+
+<v-clicks>
+
+- **読み込み専用**
+- `git fetch` で自動更新
+
+</v-clicks>
+
+</div>
+
+<!--
+(スライドを読む)
+
+以上で参照の各論は終わりになります。
+-->
 
 ---
 layout: section
