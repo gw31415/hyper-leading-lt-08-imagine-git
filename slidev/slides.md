@@ -1398,7 +1398,7 @@ transition: fade
 
 ## いつ更新される？
 
-→ <v-click> **`git add` などで編集**</v-click>、 <v-click>**ブランチ移動でリセット**</v-click>
+→ <v-click> **`git add` などで編集**</v-click>、 <v-click>**HEAD移動でリセット**</v-click>
 
 <v-clicks>
 
